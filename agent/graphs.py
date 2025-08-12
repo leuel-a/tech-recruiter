@@ -2,7 +2,7 @@ from langgraph.graph import StateGraph, START, END
 from agent.state_schemas import State
 
 from agent.chains import (
-    extract_search_query_from_user_prompt,
+    extract_search_query_from_user_chain,
     search_candidates_chain,
     rank_candidates_chain
 )
@@ -11,7 +11,7 @@ from agent.chains import (
 graph_builder = StateGraph(State)
 
 
-graph_builder.add_node("extract_search_query_from_user_prompt", extract_search_query_from_user_prompt)
+graph_builder.add_node("extract_search_query_from_user_prompt", extract_search_query_from_user_chain)
 graph_builder.add_node("search_candidates_from_github", search_candidates_chain)
 graph_builder.add_node("rank_candidates_from_github", rank_candidates_chain)
 
