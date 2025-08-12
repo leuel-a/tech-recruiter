@@ -12,9 +12,9 @@ class CustomFormatter(logging.Formatter):
     ANSI_RESET = "\x1b[0m"
 
     FORMATS = {
-        logging.INFO: f"%(asctime)s - {ANSI_BLUE}%(levelname)s{ANSI_RESET} - %(message)s",
-        logging.ERROR: f"%(asctime)s - {ANSI_RED}%(levelname)s{ANSI_RESET} - %(message)s",
-        "DEFAULT": "%(asctime)s - %(levelname)s - %(message)s"
+            logging.INFO: f"{ANSI_BLUE}%(levelname)s{ANSI_RESET}:\t%(message)s",
+            logging.ERROR: f"{ANSI_RED}%(levelname)s{ANSI_RESET}:\t%(message)s",
+            "DEFAULT": "%(levelname)s:\t%(message)s"
     }
 
     def format(self, record):

@@ -1,0 +1,22 @@
+version: 1
+disable_existing_loggers: false
+
+formatters:
+  colored:
+    (): "config.custom_formatter.CustomFormatter"
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    formatter: colored # Use the custom formatter
+    stream: ext://sys.stdout
+
+loggers:
+  uvicorn.error:
+    level: INFO
+    handlers: [console]
+    propagate: no
+  uvicorn.access:
+    level: INFO
+    handlers: [console]
+    propagate: no
